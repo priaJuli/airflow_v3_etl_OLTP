@@ -41,9 +41,9 @@ To maintain a clean main `README.md` and keep configuration logic separate, you 
 ### Referencing Connection Documentation
 For detailed steps on how to configure Airflow Hooks and Connections (e.g., setting up `mysql_conn_id` or `postgres_conn_id` within the Airflow UI to point to Docker containers), please refer to:
 
-- [**Docker Connection Configuration Guide (How to create airflow connections.md)**](./How to create airflow connections.md)
+- **Docker Connection Configuration Guide** [How to create airflow connections.md](./How to create airflow connections.md)
 
-- [**Docker Connection Test Guide (Debug Airflow Connection.md)**](./Debug Airflow Connection.md)
+- **Docker Connection Test Guide** [Debug Airflow Connection.md](./Debug Airflow Connection.md)
 
 *Tip: In Docker, when Airflow needs to connect to the MySQL container, use the service name `mysql` as the host instead of `localhost`.*
 

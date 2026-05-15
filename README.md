@@ -32,6 +32,8 @@ The project environment is managed via `docker-compose.yml`, which spins up the 
 | **PostgreSQL (Target)** | Acts as the data warehouse where transformed and indexed data is stored. |
 | **Redis** | The message broker used for communication between the scheduler and workers. |
 
+This project use Different Git Project as Sources Docker Stacks. Follow this [links](https://github.com/priaJuli/DataSource_Airflow).
+
 ---
 
 ## 3. Managing Connections via External Files

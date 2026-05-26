@@ -8,6 +8,10 @@
 -- without quotes, so they are wrapped in standard single quotes.
 
 DROP TABLE IF EXISTS "transaction";
+DROP TABLE IF EXISTS "transaction_east";
+DROP TABLE IF EXISTS "transaction_north";
+DROP TABLE IF EXISTS "transaction_west";
+DROP TABLE IF EXISTS "transaction_south";
 
 DROP TYPE IF EXISTS hospital_type_enum;
 DROP TYPE IF EXISTS ownership_enum;
@@ -48,12 +52,12 @@ CREATE TABLE "transaction" (
   "avg_service_cost" REAL NOT NULL,
   "cost_per_patient" REAL NOT NULL,
   "operational_efficiency_index" REAL NOT NULL,
-  "redmission_rate" REAL NOT NULL,
+  "readmission_rate" REAL NOT NULL,
   "service_completion_rate" REAL NOT NULL,
   "complaint_rate" REAL NOT NULL,
   "followup_adherence_rate" REAL NOT NULL,
   "latent_accessibility_score" REAL NOT NULL,
   "latent_efficiency_score" REAL NOT NULL,
   "semantic_cluster_id" INT NOT NULL,
-  "semantic_cluster_level" REAL NOT NULL
+  "semantic_noise_level" REAL NOT NULL
 );

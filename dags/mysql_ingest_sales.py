@@ -13,7 +13,7 @@ import logging
 # ==========================================================
 
 with DAG(
-    dag_id="file_raw_to_mysql_table",
+    dag_id="mysql_file_raw_load",
     start_date=datetime(2026, 1, 1),
     schedule=None,
     catchup=False,
@@ -65,14 +65,14 @@ with DAG(
             avg_service_cost ,
             cost_per_patient ,
             operational_efficiency_index ,
-            redmission_rate ,
+            readmission_rate ,
             service_completion_rate ,
             complaint_rate ,
             followup_adherence_rate ,
             latent_accessibility_score ,
             latent_efficiency_score ,
             semantic_cluster_id ,
-            semantic_cluster_level
+            semantic_noise_level
         );
 
         """

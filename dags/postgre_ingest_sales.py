@@ -12,7 +12,7 @@ import logging
 # ==========================================================
 
 with DAG(
-    dag_id="file_raw_to_postgre_table",
+    dag_id="psql_file_raw_load",
     start_date=datetime(2026, 1, 1),
     schedule=None,
     catchup=False,
@@ -35,8 +35,8 @@ with DAG(
 
         COPY transaction ( year, month, id, hospital_id, hospital_type, ownership, region, urban_rural, service_category, patient_volume, 
         avg_daily_visits, bed_occupancy_rate, staff_to_patient_ratio, resource_utilization_rate, avg_wait_time_minutes, service_delay_rate, appointment_backlog, 
-        avg_service_cost, cost_per_patient, operational_efficiency_index, redmission_rate, service_completion_rate, complaint_rate, followup_adherence_rate, 
-        latent_accessibility_score, latent_efficiency_score, semantic_cluster_id, semantic_cluster_level)
+        avg_service_cost, cost_per_patient, operational_efficiency_index, readmission_rate, service_completion_rate, complaint_rate, followup_adherence_rate, 
+        latent_accessibility_score, latent_efficiency_score, semantic_cluster_id, semantic_noise_level)
         FROM '/tmp/spark_datasets/synthetic_healthcare_semantics.csv' 
         WITH (FORMAT CSV, HEADER, DELIMITER ',');
 

@@ -34,6 +34,7 @@ x-airflow-common: &airflow-common
 
 services:
 
+  
   redis:
     image: redis:7.2-alpine
     expose:
@@ -287,6 +288,32 @@ services:
       - spark-master
     volumes:
       - spark_master_spark_datasets:/home/jovyan/datasets
+    networks:
+      - airflow_internal_v3
+      - airflow_base_network
+
+  jupyter:
+    image: pramonettivega/jupyter-coursera
+    container_name: jupyter-spark
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./jobs:/home/jovyan/src
+      - spark_master_spark_datasets:/home/jovyan/datasets
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - MYSQL_SOURCE_USER=${MYSQL_SOURCE_USER}
+      - MYSQL_SOURCE_PASSWORD=${MYSQL_SOURCE_PASSWORD}
+      - MYSQL_SOURCE_DB=${MYSQL_SOURCE_DB}
+      - MYSQL_SOURCE_HOST=${MYSQL_SOURCE_HOST}
+      - MYSQL_SOURCE_PORT=${MYSQL_SOURCE_PORT}
+      - PSQL_SOURCE_USER=${PSQL_SOURCE_USER}
+      - PSQL_SOURCE_PASSWORD=${PSQL_SOURCE_PASSWORD}
+      - PSQL_SOURCE_DB=${PSQL_SOURCE_DB}
+      - PSQL_SOURCE_HOST=${PSQL_SOURCE_HOST}
+      - PSQL_SOURCE_PORT=${PSQL_SOURCE_PORT}
+    depends_on:
+      - spark-master
     networks:
       - airflow_internal_v3
       - airflow_base_network

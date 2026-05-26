@@ -13,7 +13,7 @@ import logging
 # ==========================================================
 
 with DAG(
-    dag_id="split_data_region_postgre_table",
+    dag_id="psql_split_data_region",
     start_date=datetime(2026, 1, 1),
     schedule=None,
     catchup=False,

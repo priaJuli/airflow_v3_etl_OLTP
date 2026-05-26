@@ -29,7 +29,7 @@ def create_table():
 
 with DAG(
 
-    dag_id='create_table_structure_mysql',
+    dag_id='mysql_create_table_structure',
 
     start_date=datetime(2024, 1, 1),
     tags=["create_table", "mysql", "etl"],

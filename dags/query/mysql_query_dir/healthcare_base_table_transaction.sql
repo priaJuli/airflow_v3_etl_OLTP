@@ -52,14 +52,14 @@ CREATE TABLE `transaction` (
   `avg_service_cost` float NOT NULL,
   `cost_per_patient` float NOT NULL,
   `operational_efficiency_index` float NOT NULL,
-  `redmission_rate` float NOT NULL,
+  `readmission_rate` float NOT NULL,
   `service_completion_rate` float NOT NULL,
   `complaint_rate` float NOT NULL,
   `followup_adherence_rate` float NOT NULL,
   `latent_accessibility_score` float NOT NULL,
   `latent_efficiency_score` float NOT NULL,
   `semantic_cluster_id` int NOT NULL,
-  `semantic_cluster_level` float NOT NULL
+  `semantic_noise_level` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --

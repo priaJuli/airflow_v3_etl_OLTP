@@ -16,3 +16,11 @@ RUN pip install --no-cache-dir \
     apache-airflow-providers-mysql \
     apache-airflow-providers-fab \
     apache-airflow-providers-apache-spark
+
+RUN pip install --no-cache-dir \
+    clickhouse-driver~=0.2.9 
+
+RUN pip install --no-cache-dir \
+    airflow-clickhouse-plugin 
+
+RUN pip install --no-cache-dir clickhouse-connect

@@ -1,5 +1,7 @@
 airflow connections test datasource_airflow_mysql
 
+airflow connections test datasource_airflow_psql
+
 airflow dags delete create_table_structure
 
 airflow dags delete file_raw_to_mysql_table
